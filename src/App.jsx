@@ -1,5 +1,17 @@
+import Header from "./components/Header";
+
 function App() {
-    return <h1>Hello World!</h1>
+    return (
+        <>
+            <Header />
+            {/* hero header */}
+            {/* companies section */}
+            {/* popular courses section */}
+            {/* testimonials section */}
+            {/* contact us section */}
+            {/* footer section */}
+        </>
+    )
 }
 
 export default App;
