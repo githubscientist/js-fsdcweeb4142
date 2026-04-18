@@ -1,8 +1,8 @@
-function Header(props){
+function Header({ name, age }){
 
     return (
         <>
-            <h1>Hello { props.name  }! You are { props.age } years old!</h1>
+            <h1>Hello { name  }! You are { age } years old!</h1>
         </>
     )
 }
