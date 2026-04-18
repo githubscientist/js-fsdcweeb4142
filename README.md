@@ -25,3 +25,17 @@
 3. **Single Page Application (SPA)**:
    - React is often used to build single-page applications, where the entire application runs on a single web page, and content is dynamically updated without requiring a full page reload.
    - Which means, we will have only one HTML file (index.html) and all the content will be rendered dynamically using JavaScript.
+
+## React Components
+
+- React components can be defined as either functional components or class components.
+
+1. Functional Components:
+   - These are simple JavaScript functions that return JSX (JavaScript XML) to define the UI.
+   - They can use React hooks to manage state and side effects.
+
+2. Class Components:
+   - These are ES6 classes that extend the `React.Component` class.
+   - They have a `render()` method that returns JSX to define the UI.
+
+The class components are less commonly used in modern React development, as functional components with hooks have become the preferred approach for building React applications.
