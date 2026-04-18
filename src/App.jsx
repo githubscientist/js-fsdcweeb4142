@@ -1,15 +1,8 @@
-import Header from "./components/Header";
-
+// component -> a javascript function that returns a html block
 function App() {
     return (
         <>
-            <Header />
-            {/* hero header */}
-            {/* companies section */}
-            {/* popular courses section */}
-            {/* testimonials section */}
-            {/* contact us section */}
-            {/* footer section */}
+            <h1>Hello World!</h1>
         </>
     )
 }
