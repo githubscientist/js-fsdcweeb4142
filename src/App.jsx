@@ -1,15 +1,26 @@
-import React from "react";
-import Header from "./components/Header";
+import React, { Component } from 'react';
 
-// class component
-class App extends React.Component {
+export class App extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            likes: 0
+        }
+    }
+
+    handleLike = () => {
+        this.setState({
+            likes: this.state.likes + 1
+        })
+    }
+
     render() {
-        let name = 'Krish';
-        let age = 25;
-
         return (
             <>
-                <Header name={name} age={age} />
+                <h1>Likes: {this.state.likes}</h1>
+                <button onClick={this.handleLike}>Like</button>
             </>
         )
     }
