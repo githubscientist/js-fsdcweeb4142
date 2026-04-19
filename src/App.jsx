@@ -1,11 +1,17 @@
-import CompA from "./components/CompA";
-
 const App = () => {
-    const message = "Hello World!";
+    let likes = 0;
 
-    return <CompA
-        message={message}
-    />
+    const handleLike = () => {
+        likes = likes + 1; // likes++
+        console.log(likes);
+    }
+
+    return (
+        <>
+            <h1>Likes: {likes}</h1>
+            <button onClick={handleLike}>Like</button>
+        </>
+    )
 }
 
 export default App;

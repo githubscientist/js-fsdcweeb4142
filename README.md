@@ -63,3 +63,17 @@ Problem with Props Drilling:
 Solution to Props Drilling:
 
 - To avoid props drilling, we can use state management libraries like Redux or Context API, which allow us to manage the state of our application in a centralized way and avoid passing props through multiple layers of components.
+
+## Hooks
+
+- Initially, React only had class components, which by default had access to state and lifecycle methods. Class components were more complex and less intuitive for many developers, especially those new to React.
+- On the other hand, React also had functional components, which were simpler and easier to understand but did not have access to state or lifecycle methods. But the functional components are simple, easy to read and write, and they encourage a more functional programming style.
+- To address this issue, React introduced Hooks in version 16.8(in the year 2019). Hooks allow functional components to use state and lifecycle methods, making them more powerful and versatile. With Hooks, developers can write functional components that have the same capabilities as class components, while still maintaining the simplicity and readability of functional programming.
+- Hooks are functions that allow you to "hook into" React's state and lifecycle features from functional components. They provide a way to manage state, perform side effects, and access context in functional components without the need for class components.
+- Hooks has a prefix "use" to indicate that they are hooks, and they can only be called at the top level of a functional component or from within other hooks.
+- Some commonly used hooks include `useState` for managing state, `useEffect` for performing side effects, and `useContext` for accessing context.
+
+## What is a State?
+
+- State is a built-in object in React that allows components to manage and store data that can change over time.
+- Unlike a normal data or props in a Component, state is mutable, which means that it can be updated and changed as needed. If there is a change in the state, React will re-render the component to reflect the updated state in the UI.
