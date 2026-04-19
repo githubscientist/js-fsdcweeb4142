@@ -1,10 +1,13 @@
+import { useState } from "react";
+
 const App = () => {
-    let likes = 0;
+    const [likes, setLikes] = useState(0);
 
     const handleLike = () => {
-        likes = likes + 1; // likes++
-        console.log(likes);
+        setLikes(likes + 1);
     }
+
+    console.log(likes);
 
     return (
         <>
