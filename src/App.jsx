@@ -1,20 +1,11 @@
-// parent component
-import Header from './components/Header';
+import CompA from "./components/CompA";
 
-function App() {
+const App = () => {
+    const message = "Hello World!";
 
-    // 1. create a function in the parent component
-    // to receive the data from the child component
-    const receiveChildData = (name, age) => {
-        console.log(`Hello ${name}! You are ${age} years old!`);
-    }
-
-    // 2. pass the function receiveChildData as props
-    return (
-        <>
-            <Header receiveChildData={receiveChildData} />
-        </>
-    )
+    return <CompA
+        message={message}
+    />
 }
 
 export default App;
