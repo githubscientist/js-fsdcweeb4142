@@ -15,13 +15,20 @@ const App = () => {
     setLikes(likes + 1);
   };
 
+  const dislikeHandler = () => {
+    if (likes > 0) {
+      setLikes(likes - 1);
+    }
+  }
+
   console.log(`likes:${likes}`);
 
   // when the like button is clicked, it will call likeHandler function
   return (
     <>
       <h1>Likes: {likes}</h1>
-      <button onClick={likeHandler}>Like</button>
+      <button onClick={likeHandler}>Like</button> &nbsp;
+      <button onClick={dislikeHandler}>Dislike</button>
     </>
   )
 }
