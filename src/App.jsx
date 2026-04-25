@@ -1,14 +1,21 @@
-// updating a normal variable does not cause re-rendering of the component
-// re-rendering means that the component will be re-evaluated and the UI will be updated with the new values
+// state: a way to store and manage data in a component (component's memory)
+// state is used to store data that can change over time and affect the rendering of the component
+// in react, we can use useState hook to manage state in functional components
+// the useState is a function that returns an array
+// the array have a stateful value and a function to update it.
+
+// Note: We should not update or mutate the state directly.
+// Note: State change causes re-rendering.
+import { useState } from "react";
 
 const App = () => {
-  let likes = 0;
+  const [likes, setLikes] = useState(0);
 
   const likeHandler = () => {
-    // update the likes variable
-    likes++; // or likes = likes + 1;
-    console.log(likes); // this will log the updated value of likes
+    setLikes(likes + 1);
   };
+
+  console.log(`likes:${likes}`);
 
   // when the like button is clicked, it will call likeHandler function
   return (
