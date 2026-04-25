@@ -39,3 +39,17 @@
    - They have a `render()` method that returns JSX to define the UI.
 
 The class components are less commonly used in modern React development, as functional components with hooks have become the preferred approach for building React applications.
+
+## React Hooks
+
+- React hooks are introduced in React 16.8 (2019) to allow functional components to manage state and side effects.
+- React hooks are functions that let you "hook into" React state and lifecycle features from function components.
+- Some commonly used React hooks include:
+1. `useState`: Allows you to add state to functional components.
+2. `useEffect`: Allows you to perform side effects in functional components, such as fetching data or subscribing to events.
+3. `useContext`: Allows you to access the context in functional components, which is a way to share data between components without passing props down manually at every level.  
+4. `useRef`: Allows you to create a mutable reference that persists across re-renders, which can be used to access DOM elements or store mutable values.
+
+### useState Hook
+
+- The `useState` hook is used to add state to functional components. It returns an array with two elements: the current state value and a function to update that state.
