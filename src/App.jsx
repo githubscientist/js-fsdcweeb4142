@@ -1,7 +1,6 @@
 // controlled input: an input element whose value is controlled by React state.
 
 import { useState } from "react";
-import './App.css';
 
 const App = () => {
   const [email, setEmail] = useState("");
@@ -19,23 +18,18 @@ const App = () => {
     event.target.email.focus();
   }
 
-  // const formStyles = {
-  //   display: "flex",
-  //   flexDirection: "column",
-  //   gap: 10,
-  //   border: "1px solid lightgray",
-  //   padding: "32px"
-  // };
-
-  // inline styling
   return (
-    <>
+    <div>
       <form
         onSubmit={handleLogin}
-        className="formLogin"
+        className="flex flex-col gap-4 w-100 mx-auto mt-10 border border-gray-300 rounded p-8 shadow-lg"
       >
-        <h1>Login</h1>
-        <div>
+        <h1
+          className="text-2xl font-bold text-center"
+        >Login</h1>
+        <div
+          className="flex flex-col gap-2"
+        >
           <input
             name="email"
             type="email"
@@ -43,10 +37,7 @@ const App = () => {
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             required
-            style={{
-              height: "30px",
-              paddingLeft: "16px"
-            }}
+            className="border border-gray-300 rounded px-3 py-2"
           />
         </div>
 
@@ -58,21 +49,18 @@ const App = () => {
             value={password}
             onChange={e => setPassword(e.target.value)}
             required
-            style={{
-              height: "30px",
-              paddingLeft: "16px"
-            }}
+            className="border border-gray-300 rounded px-3 py-2 w-full"
           />
         </div>
 
         <button
           type="submit"
-          className="btnLogin"
+          className="bg-blue-500 text-white rounded px-3 py-2 w-full"
         >
           Login
         </button>
       </form>
-    </>
+    </div>
   )
 }
 
