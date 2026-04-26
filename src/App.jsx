@@ -4,11 +4,18 @@ import { useState } from "react";
 
 const App = () => {
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = (event) => {
     event.preventDefault();
-    console.log('form submitted');
-    console.log(email);
+    console.log('Logging in...');
+    console.log(email, password);
+
+    // reset the form
+    setEmail("");
+    setPassword("");
+
+    event.target.email.focus();
   }
 
   return (
@@ -22,6 +29,7 @@ const App = () => {
             placeholder="email..."
             onChange={(e) => setEmail(e.target.value)}
             value={email}
+            required
           />
         </div>
 
@@ -30,6 +38,9 @@ const App = () => {
             name="password"
             type="password"
             placeholder="password..."
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            required
           />
         </div>
 
