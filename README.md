@@ -53,3 +53,7 @@ The class components are less commonly used in modern React development, as func
 ### useState Hook
 
 - The `useState` hook is used to add state to functional components. It returns an array with two elements: the current state value and a function to update that state.
+
+### Uncontrolled Input Vs Controlled Input
+
+- Uncontrolled Input: An uncontrolled input is an input element that manages its own state internally. It does not rely on React state to control its value. Instead, it uses the DOM to handle user input and updates its value accordingly.
