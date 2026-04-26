@@ -1,12 +1,14 @@
-// uncontrolled component or uncontrolled form
-// We are not using React state to control the value of the input fields.
+// controlled input: an input element whose value is controlled by React state.
+
+import { useState } from "react";
+
 const App = () => {
+  const [email, setEmail] = useState("");
+
   const handleLogin = (event) => {
     event.preventDefault();
-    console.log('form submitted...');
-    console.log('Logging in with the following credentials...');
-    console.log(event.target.email.value);
-    console.log(event.target.password.value);
+    console.log('form submitted');
+    console.log(email);
   }
 
   return (
@@ -18,6 +20,8 @@ const App = () => {
             name="email"
             type="email"
             placeholder="email..."
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
           />
         </div>
 
