@@ -39,6 +39,7 @@ const App = () => {
         </span>
         {reactions.dislikes}
       </button>
+      <p>{history.join(' ')}</p>
     </>
   )
 }
