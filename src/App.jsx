@@ -55,7 +55,7 @@ const App = () => {
 
         <button
           type="submit"
-          className="bg-blue-500 text-white rounded px-3 py-2 w-full"
+          className="bg-yellow-500 text-white rounded px-3 py-2 w-full"
         >
           Login
         </button>
