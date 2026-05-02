@@ -1,33 +1,24 @@
+import { useEffect } from 'react';
 import './App.css';
 
 const App = () => {
 
   const recipes = [
-    {
-      name: 'Pasta',
-      ingredients: ['Pasta', 'Tomato Sauce', 'Cheese'],
-      author: 'John Doe',
-      cookingTime: '30 minutes',
-      difficulty: 'Easy',
-      isFavourite: true
-    },
-    {
-      name: 'Chicken Curry',
-      ingredients: ['Chicken', 'Curry Powder', 'Coconut Milk'],
-      author: 'Jane Smith',
-      cookingTime: '45 minutes',
-      difficulty: 'Medium',
-      isFavourite: false
-    },
-    {
-      name: 'Chocolate Cake',
-      ingredients: ['Flour', 'Sugar', 'Cocoa Powder', 'Eggs'],
-      author: 'Emily Johnson',
-      cookingTime: '1 hour',
-      difficulty: 'Hard',
-      isFavourite: false
-    }
   ];
+
+  // this runs first time when the component is rendered
+  // and every time when the component is re-rendered -> whenever any state changes
+  useEffect(() => {
+    fetch(`https://69f59849fb098eb7f0b55d6a.mockapi.io/recipes`)
+      .then((response) => {
+        console.log('fetching recipes...');
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch(error => console.log(error));
+  })
 
   return (
     <>

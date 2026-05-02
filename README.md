@@ -57,3 +57,7 @@ The class components are less commonly used in modern React development, as func
 ### Uncontrolled Input Vs Controlled Input
 
 - Uncontrolled Input: An uncontrolled input is an input element that manages its own state internally. It does not rely on React state to control its value. Instead, it uses the DOM to handle user input and updates its value accordingly.
+
+## useEffect Hook
+
+- The `useEffect` hook is used to perform side effects in functional components. It allows you to run code after the component has rendered, and it can be used for tasks such as fetching data, subscribing to events, or manipulating the DOM.
