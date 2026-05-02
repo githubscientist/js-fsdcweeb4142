@@ -61,3 +61,8 @@ The class components are less commonly used in modern React development, as func
 ## useEffect Hook
 
 - The `useEffect` hook is used to perform side effects in functional components. It allows you to run code after the component has rendered, and it can be used for tasks such as fetching data, subscribing to events, or manipulating the DOM.
+
+## Axios
+
+- Axios is a popular JavaScript library used for making HTTP requests from the browser or Node.js. It provides an easy-to-use API for sending asynchronous HTTP requests and handling responses.
+- It supports better features than the built-in `fetch` API, such as automatic JSON parsing, request cancellation, and interceptors for request and response handling.

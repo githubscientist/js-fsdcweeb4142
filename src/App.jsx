@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import axios from 'axios';
 
 const App = () => {
 
@@ -9,12 +10,9 @@ const App = () => {
   // runs first time when the component is rendered
   // and will not run during re-rendering of the component
   useEffect(() => {
-    fetch(`https://69f59849fb098eb7f0b55d6a.mockapi.io/recipes`)
-      .then((response) => {
-        return response.json();
-      })
+    axios.get(`https://69f59849fb098eb7f0b55d6a.mockapi.io/recipes`)
       .then((data) => {
-        setRecipes(data);
+        setRecipes(data.data);
       })
       .catch(error => console.log(error));
   }, []);
