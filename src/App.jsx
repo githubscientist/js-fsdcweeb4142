@@ -1,11 +1,14 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 const App = () => {
 
+  const [fetchData, setFetchData] = useState(0);
+
   const recipes = [
   ];
 
+  // useEffect without dependency list
   // this runs first time when the component is rendered
   // and every time when the component is re-rendered -> whenever any state changes
   useEffect(() => {
@@ -23,6 +26,7 @@ const App = () => {
   return (
     <>
       <h1>Recipes</h1>
+      <button onClick={() => setFetchData(fetchData + 1)}>Fetch Data</button>
       <ul>
         {
           recipes
