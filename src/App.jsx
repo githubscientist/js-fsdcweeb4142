@@ -13,23 +13,17 @@ const App = () => {
     'Soup'
   ];
 
-  // const list = [<li>Biryani</li>];
-
-  const list = [];
-
-  recipes.forEach(recipe => {
-    list.push(
-      <li>{recipe}</li>
-    )
-  });
-
-  console.log(list);
-
   return (
     <>
       <h1>Recipes</h1>
       <ul>
-        {list}
+        {
+          recipes
+            .map((recipe, index) => {
+              return <li key={index}>{recipe}</li>
+            }
+            )
+        }
       </ul>
     </>
   )
