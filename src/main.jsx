@@ -1,6 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import App from './App'
-import './index.css'
+// remove the comment line below to enable tailwind css
+// import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <div>
