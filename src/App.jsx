@@ -19,6 +19,8 @@ const App = () => {
       .catch(error => console.log(error));
   }, []);
 
+  console.log(recipes);
+
   return (
     <>
       <h1>Recipes</h1>
