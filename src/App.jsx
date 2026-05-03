@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Todo from "./components/Todo";
 
 const App = () => {
 
@@ -12,17 +13,18 @@ const App = () => {
       .then(response => setTodos(response.data));
   }, []);
 
-  console.log(todos);
-
   return (
     <>
       <h1>Todos</h1>
       <ul>
         {
           todos
-            .map(todo => (
-              <li key={todo.id}>{todo.title}</li>
-            ))
+            .map(todo => {
+              return <Todo
+                key={todo.id}
+                todo={todo}
+              />
+            })
         }
       </ul>
     </>
