@@ -1,15 +1,4 @@
-## useEffect Hook
+## useReducer
 
-- `useEffect` is a hook in React that allows you to perform side effects in function components. It serves the same purpose as lifecycle methods like `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` in class components.
-- side effects can include things like fetching data from an API, subscribing to events, or manually manipulating the DOM.
-
-### The ways to use `useEffect`:
-
-1. **Without dependencies**: The effect will run after every render.
-2. **With an empty dependency array**: The effect will run only once, after the initial render.
-3. **With specific dependencies**: The effect will run only when the specified dependencies change.
-
-## Axios
-
-- `Axios` is a popular JavaScript library used to make HTTP requests from the browser or Node.js. 
-
+- useReducer is a React hook that allows you to manage complex state logic in a more predictable way. 
+- It is an alternative to useState and is often used when you have multiple state variables that depend on each other or when you want to manage state in a more structured way.
