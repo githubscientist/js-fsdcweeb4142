@@ -14,16 +14,16 @@
 
 // export default App;
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const App = () => {
 
-  let [count, setCount] = useState(0);
+  let count = useRef(0);
   let [state, setState] = useState(true);
 
   const handleCount = () => {
-    setCount(count + 1);
-    console.log(count);
+    count.current = count.current + 1;
+    console.log(count.current);
   }
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const App = () => {
 
   return (
     <>
-      <h1>Count: {count}</h1>
+      <h1>Count: {count.current}</h1>
       <button onClick={handleCount}>Inc</button> &nbsp;
       <button onClick={() => setState(!state)}>Change State</button>
     </>
