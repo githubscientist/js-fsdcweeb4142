@@ -1,15 +1,7 @@
-## useEffect Hook
+# React Router
 
-- `useEffect` is a hook in React that allows you to perform side effects in function components. It serves the same purpose as lifecycle methods like `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` in class components.
-- side effects can include things like fetching data from an API, subscribing to events, or manually manipulating the DOM.
+React Router is a popular library for handling routing in React applications. It allows developers to create single-page applications with navigation without refreshing the page.
 
-### The ways to use `useEffect`:
-
-1. **Without dependencies**: The effect will run after every render.
-2. **With an empty dependency array**: The effect will run only once, after the initial render.
-3. **With specific dependencies**: The effect will run only when the specified dependencies change.
-
-## Axios
-
-- `Axios` is a popular JavaScript library used to make HTTP requests from the browser or Node.js. 
-
+- We get the browser's history behavior including back and forward buttons.
+- We can navigate or change the URL programmatically.
+- And as we change the URL, the corresponding components will be rendered.
