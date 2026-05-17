@@ -1,11 +1,10 @@
 import Child3 from "./Child3";
 
-const Child2 = ({ message }) => {
+const Child2 = () => {
+
     return (
         <div>
-            <Child3
-                message={message}
-            />
+            <Child3 />
         </div>
     )
 }
