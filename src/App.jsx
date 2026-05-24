@@ -1,21 +1,19 @@
-import { useContext } from "react";
-import { ReactionsContext } from "./contexts/ReactionsStore";
+import { useDispatch, useSelector } from "react-redux";
+import { selectLikes, setLikes } from "./redux/features/reactionSlice";
 
 const App = () => {
 
-  // use the context to get the state and dispatch function
-  const { likes, setLikes } = useContext(ReactionsContext);
+  const likes = useSelector(selectLikes);
+  const dispatch = useDispatch();
 
-  const { user, setUser } = useContext(ReactionsContext);
-
-  console.log(user);
+  const handleLikes = () => {
+    dispatch(setLikes());
+  }
 
   return (
     <div>
       <h1>Likes: { likes }</h1>
-      <button onClick={() => setLikes({ 
-        type: "LIKE"
-      })}>Like</button>
+      <button onClick={handleLikes}>Like</button>
     </div>
   )
 }
