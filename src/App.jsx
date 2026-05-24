@@ -1,4 +1,5 @@
-import { useReducer, useState } from "react";
+import { createContext, useReducer, useState } from "react";
+import Reactions from "./components/Reactions";
 
 const reducer = (state, action) => {
   // the current state is in -> state
@@ -10,16 +11,16 @@ const reducer = (state, action) => {
   }
 }
 
+// create a context
+export const ReactionsContext = createContext();
+
 const App = () => {
   const [likes, setLikes] = useReducer(reducer, 0);
 
   return (
-    <div>
-      <h1>Likes: {likes}</h1>
-      <button onClick={() => setLikes({ 
-        type: "LIKE"
-       })}>Like</button>
-    </div>
+    <ReactionsContext.Provider value={{ likes, setLikes }}>
+      <Reactions />
+    </ReactionsContext.Provider>
   )
 }
 
