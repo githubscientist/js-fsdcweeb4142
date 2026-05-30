@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectNotes, setNotes } from "../redux/features/noteSlice";
 import instance from "../instances/instance";
+import { Link } from "react-router";
 
 const Notes = () => {
   const notes = useSelector(selectNotes);
@@ -23,7 +24,9 @@ const Notes = () => {
         {
           notes
             .map(note => (
-              <li key={note.id}>{ note.description }</li>
+              <li key={note.id}>
+                <Link to={`/dashboard/notes/${note.id}`}>{note.description}</Link>
+              </li>
             ))
         }
       </ul>
