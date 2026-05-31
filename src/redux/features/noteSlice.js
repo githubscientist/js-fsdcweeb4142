@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import noteServices from "../../services/noteServices";
 
+// GET /notes
 export const fetchNotes = createAsyncThunk(
     'note/fetchNotes',
     async (_, thunkAPI) => {
@@ -15,6 +16,22 @@ export const fetchNotes = createAsyncThunk(
     }
 )
 
+// GET /notes/:id
+export const fetchNoteByID = createAsyncThunk(
+    'note/fetchNoteByID',
+    async (id, thunkAPI) => {
+        try {
+            const response = await noteServices.getNotesById(id);
+            return response.data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(
+                error.response?.data?.message || "Failed to fetch note"
+            )
+        }
+    }
+)
+
+
 // create a new slice
 export const noteSlice = createSlice({
     name: "note",
@@ -22,6 +39,9 @@ export const noteSlice = createSlice({
         notes: [],
         loadingNotes: false,
         notesError: null,
+        note: null,
+        loadingNote: false,
+        noteError: null
     },
     reducers: {},
     extraReducers: (builder) => {
@@ -40,6 +60,20 @@ export const noteSlice = createSlice({
                 state.notes = [];
                 state.notesError = action.payload || "Failed to fetch notes";
             })
+        
+            .addCase(fetchNoteByID.pending, (state) => {
+                state.loadingNote = true;
+                state.noteError = null;
+            })
+            .addCase(fetchNoteByID.fulfilled, (state, action) => {
+                state.loadingNote = false;
+                state.note = action.payload;
+            })
+            .addCase(fetchNoteByID.rejected, (state, action) => {
+                state.loadingNote = false;
+                state.note = null;
+                state.noteError = action.payload || "Failed to fetch note";
+            })
     }
 });
 
@@ -47,6 +81,10 @@ export const noteSlice = createSlice({
 export const selectNotes = (state) => state.note.notes;
 export const selectLoadingNotes = (state) => state.note.loadingNotes;
 export const selectNotesError = (state) => state.note.notesError;
+
+export const selectNote = (state) => state.note.note;
+export const selectLoadingNote = (state) => state.note.loadingNote;
+export const selectNoteError = (state) => state.note.noteError;
 
 // export the reducer
 export default noteSlice.reducer;
