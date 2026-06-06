@@ -1,39 +1,26 @@
-## Prompt Engineering
+# Vibe Coding
 
-- What is Prompt Engineering?
-    - Prompt engineering is the process of designing and refining prompts to effectively communicate with AI models, such as language models, to achieve desired outputs. It involves crafting prompts that are clear, concise, and contextually relevant to guide the AI in generating accurate and useful responses.
+[x] Understanding Vibe Coding
+[x] Emotion-Aware Interaction Coding
+[x] Designing Conversational AI with Personality
+[x] Integrating AI with Front-end UX
 
-### Topics
-[x] Writing Effective Prompts
-[x] Output Control Techniques
-[x] Context Handling in Prompts
-[x] Role-based Prompt Design
+## Understanding Vibe Coding
 
-#### Writing Effective Prompts
+Vibe Coding is a programming paradigm that focuses on creating software that can understand and respond to human emotions and social cues. It involves designing algorithms and systems that can interpret the emotional state of users and adapt their behavior accordingly.
 
-- Be Clear and Specific: Use precise language to convey your request. Avoid ambiguity to ensure the AI understands your intent.
+## Emotion-Aware Interaction Coding
 
-- Provide Context: Include relevant information or background to help the AI generate a more accurate response.
+Emotion-Aware Interaction Coding involves developing software that can recognize and respond to the emotional states of users. This can be achieved through various techniques such as natural language processing, sentiment analysis, and machine learning. The goal is to create applications that can provide a more personalized and empathetic user experience.
 
-- Output Control: Use specific instructions to guide the AI on the format, style, or content of the response.
+## Designing Conversational AI with Personality
 
-#### Output Control Techniques
+Designing Conversational AI with Personality involves creating chatbots and virtual assistants that have distinct personalities and can engage users in a more human-like manner. This includes developing unique voices, tones, and conversational styles that resonate with users and make interactions more enjoyable.
 
-- Use Constraints: Specify limits on the response, such as word count, format (e.g., bullet points), or style (e.g., formal, casual).
+In our application, example:
 
-- Provide Examples: Show the AI examples of the desired output to help it understand the expected format and content.
+We are going to build an interface that allows users to add a text input and a button to submit the text. When the user submits the text, the application will analyze the emotional tone of the input and respond with an appropriate message based on the detected emotion.
 
-- Use System Instructions: Instruct the AI on how to behave or what role to assume (e.g., "You are a helpful assistant...").
+## Integrating AI with Front-end UX
 
-#### Context Handling in Prompts
-
-- Include Relevant Information: Provide necessary background or details that the AI needs to generate an accurate response.
-
-- Use Follow-up Prompts: If the initial response is incomplete or unclear, use follow-up prompts to clarify or expand on the information.
-
-#### Role-based Prompt Design
-
-- Define Roles: Assign specific roles to the AI (e.g., "You are a customer support agent...") to guide its responses in a particular context.
-
-- Use Role-specific Language: Tailor your prompts to the role you want the AI to assume, using language and instructions that align with that role.
-
+Integrating AI with Front-end UX involves combining artificial intelligence technologies with user interface design to create seamless and intuitive user experiences. This can include using AI to personalize content, provide real-time feedback, and enhance user interactions.
