@@ -1,26 +1,35 @@
-# Vibe Coding
+## Databases -- MYSQL & MongoDB
 
-[x] Understanding Vibe Coding
-[x] Emotion-Aware Interaction Coding
-[x] Designing Conversational AI with Personality
-[x] Integrating AI with Front-end UX
+### Database
 
-## Understanding Vibe Coding
+- Collection of Data
+- Data will be in a form of either:
+    - structured 
+        - data that is organized in a specific way, such as tables with rows and columns (e.g., SQL databases like MySQL)
+    - unstructured 
+        - data that does not have a predefined format or organization (e.g., NoSQL databases like MongoDB)
 
-Vibe Coding is a programming paradigm that focuses on creating software that can understand and respond to human emotions and social cues. It involves designing algorithms and systems that can interpret the emotional state of users and adapt their behavior accordingly.
+#### Database Management System (DBMS)
 
-## Emotion-Aware Interaction Coding
+- Software that allows users to create, manage, and interact with databases
 
-Emotion-Aware Interaction Coding involves developing software that can recognize and respond to the emotional states of users. This can be achieved through various techniques such as natural language processing, sentiment analysis, and machine learning. The goal is to create applications that can provide a more personalized and empathetic user experience.
+### MySQL
 
-## Designing Conversational AI with Personality
+#### SQL (Structured Query Language)
 
-Designing Conversational AI with Personality involves creating chatbots and virtual assistants that have distinct personalities and can engage users in a more human-like manner. This includes developing unique voices, tones, and conversational styles that resonate with users and make interactions more enjoyable.
+- A programming language used to manage and manipulate relational databases (e.g., MySQL)
 
-In our application, example:
+###### Different Type of Statements in SQL
 
-We are going to build an interface that allows users to add a text input and a button to submit the text. When the user submits the text, the application will analyze the emotional tone of the input and respond with an appropriate message based on the detected emotion.
+1. Data Definition Language (DDL)
+    - Used to define and manage database structures (e.g., CREATE, ALTER, DROP)
+2. Data Manipulation Language (DML)
+    - Used to manipulate data within the database (e.g., INSERT, UPDATE, DELETE)
+3. Data Query Language (DQL)
+    - Used to query and retrieve data from the database (e.g., SELECT)
+4. Data Control Language (DCL)
+    - Used to control access to the database (e.g., GRANT, REVOKE)
+5. Transaction Control Language (TCL)
+    - Used to manage transactions in the database (e.g., COMMIT, ROLLBACK)
 
-## Integrating AI with Front-end UX
-
-Integrating AI with Front-end UX involves combining artificial intelligence technologies with user interface design to create seamless and intuitive user experiences. This can include using AI to personalize content, provide real-time feedback, and enhance user interactions.
+###### SQL Queries

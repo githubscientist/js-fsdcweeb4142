@@ -1,0 +1,346 @@
+sathish@sathishs-MacBook-Pro js-fsdcweeb4142 % mysql -u root
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.4.9 Homebrew
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.01 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> create database mysqldb26
+    -> ;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| mysqldb26          |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> select database();
++------------+
+| database() |
++------------+
+| NULL       |
++------------+
+1 row in set (0.00 sec)
+
+mysql> use mysqldb26;
+Database changed
+mysql> select database();
++------------+
+| database() |
++------------+
+| mysqldb26  |
++------------+
+1 row in set (0.00 sec)
+
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> create table customers (customer_id int, customer_name varchar(100), email varchar(100), city varchar(50));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_mysqldb26 |
++---------------------+
+| customers           |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> describe customers;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| customer_id   | int          | YES  |     | NULL    |       |
+| customer_name | varchar(100) | YES  |     | NULL    |       |
+| email         | varchar(100) | YES  |     | NULL    |       |
+| city          | varchar(50)  | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql> insert into customers 
+    -> (1, 'sathish', 'sathish@example.com', 'coimbatore'),
+    -> (2, 'priya', 'piya@example.com', 'chennai'),
+    -> (3, 'arun', 'arun@example.com', 'madurai'),
+    -> (4, 'meena', 'meena@example.com', 'salem'),
+    -> (5, 
+    -> 'ravi', 'ravi@example.com', 'trichy');
+mysql> select * from customers                                                
+    -> ;
++-------------+---------------+---------------------+------------+
+| customer_id | customer_name | email               | city       |
++-------------+---------------+---------------------+------------+
+|           1 | sathish       | sathish@example.com | coimbatore |
+|           2 | priya         | priya@example.com   | chennai    |
+|           3 | arun          | arun@example.com    | madurai    |
+|           4 | meena         | meena@example.com   | salem      |
+|           5 | ravi          | ravi@example.com    | trichy     |
++-------------+---------------+---------------------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select customer_name, city from customers;
++---------------+------------+
+| customer_name | city       |
++---------------+------------+
+| sathish       | coimbatore |
+| priya         | chennai    |
+| arun          | madurai    |
+| meena         | salem      |
+| ravi          | trichy     |
++---------------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from customers;
++-------------+---------------+---------------------+------------+
+| customer_id | customer_name | email               | city       |
++-------------+---------------+---------------------+------------+
+|           1 | sathish       | sathish@example.com | coimbatore |
+|           2 | priya         | priya@example.com   | chennai    |
+|           3 | arun          | arun@example.com    | madurai    |
+|           4 | meena         | meena@example.com   | salem      |
+|           5 | ravi          | ravi@example.com    | trichy     |
++-------------+---------------+---------------------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from customers where city='madurai';
++-------------+---------------+------------------+---------+
+| customer_id | customer_name | email            | city    |
++-------------+---------------+------------------+---------+
+|           3 | arun          | arun@example.com | madurai |
++-------------+---------------+------------------+---------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO customers (customer_id, customer_name, email, city)
+    -> VALUES
+(6, 'karthik', 'karthik@example.com', 'coimbatore'),
+(7, 'divya', 'divya@example.com', 'chennai'),
+(8, 'suresh', 'suresh@example.com', 'madurai'),
+(9, 'anitha', 'anitha@example.com', 'salem'),
+(10, 'vijay', 'vijay@example.com', 'trichy'),
+(11, 'lakshmi', 'lakshmi@example.com', 'erode'),
+(12, 'manoj', 'manoj@example.com', 'tiruppur'),
+(13, 'kavitha', 'kavitha@example.com', 'vellore'),
+(14, 'pradeep', 'pradeep@example.com', 'thanjavur'),
+(15, 'revathi', 'revathi@example.com', 'dindigul'),
+(16, 'balaji', 'balaji@example.com', 'karur'),
+(17, 'nithya', 'nithya@example.com', 'namakkal'),
+(18, 'saravanan', 'saravanan@example.com', 'tirunelveli'),
+(19, 'deepa', 'deepa@example.com', 'thoothukudi'),
+(20, 'mohan', 'mohan@example.com', 'kanyakumari'),
+(21, 'gayathri', 'gayathri@example.com', 'coimbatore'),
+(22, 'senthil', 'senthil@example.com', 'chennai'),
+(23, 'pavithra', 'pavithra@example.com', 'madurai');
+mysql> select * from customers;
++-------------+---------------+-----------------------+-------------+
+| customer_id | customer_name | email                 | city        |
++-------------+---------------+-----------------------+-------------+
+|           1 | sathish       | sathish@example.com   | coimbatore  |
+|           2 | priya         | priya@example.com     | chennai     |
+|           3 | arun          | arun@example.com      | madurai     |
+|           4 | meena         | meena@example.com     | salem       |
+|           5 | ravi          | ravi@example.com      | trichy      |
+|           6 | karthik       | karthik@example.com   | coimbatore  |
+|           7 | divya         | divya@example.com     | chennai     |
+|           8 | suresh        | suresh@example.com    | madurai     |
+|           9 | anitha        | anitha@example.com    | salem       |
+|          10 | vijay         | vijay@example.com     | trichy      |
+|          11 | lakshmi       | lakshmi@example.com   | erode       |
+|          12 | manoj         | manoj@example.com     | tiruppur    |
+|          13 | kavitha       | kavitha@example.com   | vellore     |
+|          14 | pradeep       | pradeep@example.com   | thanjavur   |
+|          15 | revathi       | revathi@example.com   | dindigul    |
+|          16 | balaji        | balaji@example.com    | karur       |
+|          17 | nithya        | nithya@example.com    | namakkal    |
+|          18 | saravanan     | saravanan@example.com | tirunelveli |
+|          19 | deepa         | deepa@example.com     | thoothukudi |
+|          20 | mohan         | mohan@example.com     | kanyakumari |
+|          21 | gayathri      | gayathri@example.com  | coimbatore  |
+|          22 | senthil       | senthil@example.com   | chennai     |
+|          23 | pavithra      | pavithra@example.com  | madurai     |
+|          24 | dinesh        | dinesh@example.com    | salem       |
+|          25 | keerthana     | keerthana@example.com | trichy      |
+|          26 | ganesh        | ganesh@example.com    | erode       |
+|          27 | swetha        | swetha@example.com    | tiruppur    |
+|          28 | prakash       | prakash@example.com   | vellore     |
+|          29 | sangeetha     | sangeetha@example.com | thanjavur   |
+|          30 | rajesh        | rajesh@example.com    | dindigul    |
+|          31 | shalini       | shalini@example.com   | karur       |
+|          32 | vikram        | vikram@example.com    | namakkal    |
+|          33 | pooja         | pooja@example.com     | tirunelveli |
+|          34 | ajith         | ajith@example.com     | thoothukudi |
+|          35 | hema          | hema@example.com      | kanyakumari |
++-------------+---------------+-----------------------+-------------+
+35 rows in set (0.00 sec)
+
+mysql> select * from customers where city='madurai';
++-------------+---------------+----------------------+---------+
+| customer_id | customer_name | email                | city    |
++-------------+---------------+----------------------+---------+
+|           3 | arun          | arun@example.com     | madurai |
+|           8 | suresh        | suresh@example.com   | madurai |
+|          23 | pavithra      | pavithra@example.com | madurai |
++-------------+---------------+----------------------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select * from customers where city like 'tho%';
++-------------+---------------+-------------------+-------------+
+| customer_id | customer_name | email             | city        |
++-------------+---------------+-------------------+-------------+
+|          19 | deepa         | deepa@example.com | thoothukudi |
+|          34 | ajith         | ajith@example.com | thoothukudi |
++-------------+---------------+-------------------+-------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from customers limit 5;
++-------------+---------------+---------------------+------------+
+| customer_id | customer_name | email               | city       |
++-------------+---------------+---------------------+------------+
+|           1 | sathish       | sathish@example.com | coimbatore |
+|           2 | priya         | priya@example.com   | chennai    |
+|           3 | arun          | arun@example.com    | madurai    |
+|           4 | meena         | meena@example.com   | salem      |
+|           5 | ravi          | ravi@example.com    | trichy     |
++-------------+---------------+---------------------+------------+
+5 rows in set (0.00 sec)
+
+mysql> update customers set city='coimbatore' where customer_id=5;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from customers limit 5;
++-------------+---------------+---------------------+------------+
+| customer_id | customer_name | email               | city       |
++-------------+---------------+---------------------+------------+
+|           1 | sathish       | sathish@example.com | coimbatore |
+|           2 | priya         | priya@example.com   | chennai    |
+|           3 | arun          | arun@example.com    | madurai    |
+|           4 | meena         | meena@example.com   | salem      |
+|           5 | ravi          | ravi@example.com    | coimbatore |
++-------------+---------------+---------------------+------------+
+5 rows in set (0.00 sec)
+
+mysql> delete from customers where city='coimbatore';
+Query OK, 4 rows affected (0.00 sec)
+
+mysql> select * from customers;
++-------------+---------------+-----------------------+-------------+
+| customer_id | customer_name | email                 | city        |
++-------------+---------------+-----------------------+-------------+
+|           2 | priya         | priya@example.com     | chennai     |
+|           3 | arun          | arun@example.com      | madurai     |
+|           4 | meena         | meena@example.com     | salem       |
+|           7 | divya         | divya@example.com     | chennai     |
+|           8 | suresh        | suresh@example.com    | madurai     |
+|           9 | anitha        | anitha@example.com    | salem       |
+|          10 | vijay         | vijay@example.com     | trichy      |
+|          11 | lakshmi       | lakshmi@example.com   | erode       |
+|          12 | manoj         | manoj@example.com     | tiruppur    |
+|          13 | kavitha       | kavitha@example.com   | vellore     |
+|          14 | pradeep       | pradeep@example.com   | thanjavur   |
+|          15 | revathi       | revathi@example.com   | dindigul    |
+|          16 | balaji        | balaji@example.com    | karur       |
+|          17 | nithya        | nithya@example.com    | namakkal    |
+|          18 | saravanan     | saravanan@example.com | tirunelveli |
+|          19 | deepa         | deepa@example.com     | thoothukudi |
+|          20 | mohan         | mohan@example.com     | kanyakumari |
+|          22 | senthil       | senthil@example.com   | chennai     |
+|          23 | pavithra      | pavithra@example.com  | madurai     |
+|          24 | dinesh        | dinesh@example.com    | salem       |
+|          25 | keerthana     | keerthana@example.com | trichy      |
+|          26 | ganesh        | ganesh@example.com    | erode       |
+|          27 | swetha        | swetha@example.com    | tiruppur    |
+|          28 | prakash       | prakash@example.com   | vellore     |
+|          29 | sangeetha     | sangeetha@example.com | thanjavur   |
+|          30 | rajesh        | rajesh@example.com    | dindigul    |
+|          31 | shalini       | shalini@example.com   | karur       |
+|          32 | vikram        | vikram@example.com    | namakkal    |
+|          33 | pooja         | pooja@example.com     | tirunelveli |
+|          34 | ajith         | ajith@example.com     | thoothukudi |
+|          35 | hema          | hema@example.com      | kanyakumari |
++-------------+---------------+-----------------------+-------------+
+31 rows in set (0.00 sec)
+
+mysql> delete from customers;
+Query OK, 31 rows affected (0.00 sec)
+
+mysql> select * from customers;
+Empty set (0.00 sec)
+
+mysql> describe customers;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| customer_id   | int          | YES  |     | NULL    |       |
+| customer_name | varchar(100) | YES  |     | NULL    |       |
+| email         | varchar(100) | YES  |     | NULL    |       |
+| city          | varchar(50)  | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> drop table customers;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| mysqldb26          |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> drop database mysqldb26;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.01 sec)
+
+mysql> 
